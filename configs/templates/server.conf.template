@@ -1,0 +1,28 @@
+server {
+  listen 443 ssl;
+  server_name ${DOMAIN};
+  
+  ssl_certificate /etc/letsencrypt/live/${DOMAIN}/fullchain.pem; 
+  ssl_certificate_key /etc/letsencrypt/live/${DOMAIN}/privkey.pem;
+
+  include /etc/nginx/options-ssl-nginx.conf;
+  ssl_dhparam /etc/nginx/ssl-dhparams.pem;
+
+  limit_conn static_ip_conn_limit 35;
+  limit_req zone=static_ip_req_limit burst=20;
+
+  location / {
+    root /static;
+  }
+}
+server {
+  listen 80;
+  server_name ${DOMAIN};
+  
+  location / {
+    return 301 https://${DOMAIN}$request_uri;
+  }
+  location /.well-known/acme-challenge/ {
+    root /var/www/certbot;
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "student-calculator",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 6781",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "ssl-init": "docker-compose -f docker-compose.ssl-init.yml up --build ; docker-compose -f docker-compose.ssl-init.yml down",
+    "start": "docker-compose up --build ; docker-compose down"
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "sass": "^1.69.5",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vue-tsc": "^1.8.5"
+  }
+}

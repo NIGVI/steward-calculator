@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Калькулятор Стьюдента</title>
+  </head>
+  <body>
+    <noscript>
+      <style>
+        * {
+          box-sizing: border-box;
+        }
+        .noscript {
+          max-width: calc(100vw - 20px);
+          width: 450px;
+          padding: 10px 15px;
+          margin: 0 auto;
+          border-radius: 3px;
+          background-color: #cc0b0b;
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight: 700;
+          color: #ddd;
+          text-align: center;
+        }
+      </style>
+      <div class="noscript">
+        Данная страница не работает без JavaScript.<br/>
+        Включите JavaScript для использования калькулятора!
+      </div>
+    </noscript>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

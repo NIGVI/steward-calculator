@@ -1,6 +1,6 @@
 .env
-./configs/nginx/ssl-dhparams.pem
-./configs/nginx/options-ssl-nginx.conf
+configs/nginx/ssl-dhparams.pem
+configs/nginx/options-ssl-nginx.conf
 
 # Logs
 logs
