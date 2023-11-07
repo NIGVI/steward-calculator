@@ -26,6 +26,9 @@ body {
 .main-content {
   width: 895px;
   max-width: 100vw;
-  padding: 5px calc(10px + 10 * ((100vw - 250px) / (1000 - 250)));
+  padding: 5px 20px;
+  @media (max-width: 1000px) {
+    padding: 5px calc(10px + 10 * ((100vw - 250px) / (1000 - 250)));
+  }
 }
 </style>
