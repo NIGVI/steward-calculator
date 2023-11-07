@@ -22,10 +22,10 @@ body {
   display: flex;
   justify-content: center;
   min-height: 100vh;
-  border: solid 1px;
 }
 .main-content {
-  width: min-content;
+  width: 895px;
+  max-width: 100vw;
+  padding: 5px calc(10px + 10 * ((100vw - 250px) / (1000 - 250)));
 }
 </style>
-./student calculator

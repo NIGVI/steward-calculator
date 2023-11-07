@@ -46,38 +46,40 @@ function fixedNumber(number: number) {
 
 <template>
   <div>
-    <h1>Калькулятор Стьюдента</h1>
+    <h1 class="title">Калькулятор Стьюдента</h1>
 
     <StudentPanel
       class="student-table-panel"
       v-model:column-count="columnCount"
       v-model:correctness="correctness"
     />
-    <table class="table" border="1">
-      <TableHeader />
+    <div class="table-wrapper">
+      <table class="table" border="1">
+        <TableHeader />
 
-      <template v-for="(_, index) in userInputs">
-        <TableLine
-          v-if="index === 0"
-          :number="index + 1"
-          v-model="userInputs[index]"
-          :deviation="deviations[index]"
-          :deviation-in-square="deviationsInSquare[index]"
-          :average="average"
-          :deviations-in-square-average="deviationsInSquareAverage"
-          :student-coefficient="studentCoefficient"
-          :tpn="tpn"
-          v-model:trust-level="trustLevel"
-        />
-        <TableLine
-          v-else
-          :number="index + 1"
-          v-model="userInputs[index]"
-          :deviation="deviations[index]"
-          :deviation-in-square="deviationsInSquare[index]"
-        />
-      </template>
-    </table>
+        <template v-for="(_, index) in userInputs">
+          <TableLine
+            v-if="index === 0"
+            :number="index + 1"
+            v-model="userInputs[index]"
+            :deviation="deviations[index]"
+            :deviation-in-square="deviationsInSquare[index]"
+            :average="average"
+            :deviations-in-square-average="deviationsInSquareAverage"
+            :student-coefficient="studentCoefficient"
+            :tpn="tpn"
+            v-model:trust-level="trustLevel"
+          />
+          <TableLine
+            v-else
+            :number="index + 1"
+            v-model="userInputs[index]"
+            :deviation="deviations[index]"
+            :deviation-in-square="deviationsInSquare[index]"
+          />
+        </template>
+      </table>
+    </div>
 
     <button class="reset-button" @click="reset">
       Сбросить значения
@@ -86,12 +88,23 @@ function fixedNumber(number: number) {
 </template>
 
 <style lang="scss" scoped>
+.title {
+  font-size: 32px;
+  @media (max-width: 500px) {
+    font-size: 20px;
+  }
+}
 .student-table-panel {
   margin-bottom: 10px;
 }
+.table-wrapper {
+  width: 100%;
+  overflow: auto;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
 .table {
   min-width: 850px;
-  margin-bottom: 15px;
 }
 .reset-button {
   padding: 4px 13px;
@@ -101,5 +114,8 @@ function fixedNumber(number: number) {
   border-radius: 3px;
   background-color: #0053a0;
   box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 5px;
+  @media (max-width: 500px) {
+    font-size: 16px;
+  }
 }
 </style>

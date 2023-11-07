@@ -48,9 +48,15 @@ const correctness = computed({
 <style lang="scss" scoped>
 .student-top-panel {
   display: flex;
+  @media (max-width: 500px) {
+    display: block;
+  }
 }
 .student-top-panel__column:last-child {
   margin-left: 15px;
+  @media (max-width: 500px) {
+    margin-left: 0;
+  }
 }
 .top-panel-input {
   width: 35px;
