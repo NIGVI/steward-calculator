@@ -47,7 +47,7 @@ import aWithUpperLine from './a-with_upper-line.png'
     <td>
       <sub>▲</sub>
       <i>a</i>
-      <sub>сл</sub>
+      <sub>случ</sub>
     </td>
   </tr>
 </template>

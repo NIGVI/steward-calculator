@@ -3,6 +3,7 @@ import { ref, computed, watch } from 'vue'
 import StudentPanel from './StudentPanel.vue'
 import TableHeader from './StudentTableHeader.vue'
 import TableLine from './StudentTableLine.vue'
+import FullDeviationCalculator from './FullDeviationCalculator.vue'
 
 const tpnValues = {
   '0.95': [12.7, 4.3, 3.2, 2.8, 2.6, 2.4, 2.4, 2.3, 2.3],
@@ -80,6 +81,12 @@ function fixedNumber(number: number) {
         </template>
       </table>
     </div>
+    
+    <FullDeviationCalculator
+      class="full-deviation-calculator"
+      :student-coefficient="studentCoefficient"
+      :correctness="correctness"
+    />
 
     <button class="reset-button" @click="reset">
       Сбросить значения
@@ -102,6 +109,9 @@ function fixedNumber(number: number) {
   overflow: auto;
   margin-bottom: 10px;
   padding-bottom: 10px;
+}
+.full-deviation-calculator {
+  margin-bottom: 10px;
 }
 .table {
   min-width: 850px;
